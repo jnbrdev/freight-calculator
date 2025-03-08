@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    overflow: hidden;
+}
+
+.calculator {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    width: 320px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+#result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#visualization {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dimension-label {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    cursor: help;
+}
+
+.tooltip-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: #666;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 4px;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Dimension label styling */
+.dimension-label {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.zoom-controls {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+}
+
+.zoom-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #3498db;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    /* Reset default line-height */
+    padding: 0;
+    /* Remove default padding */
+}
+
+.zoom-button:hover {
+    background: #2980b9;
+    transform: scale(1.1);
+}
+
+.credits {
+    margin-top: 15px;
+    text-align: center;
+}
